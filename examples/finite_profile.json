@@ -1,0 +1,98 @@
+{
+  "weights": [
+    0.5,
+    0.5
+  ],
+  "base_cost": [
+    0.1,
+    0.1,
+    16
+  ],
+  "caps": [
+    2,
+    2,
+    128
+  ],
+  "max_unavailable": 0.025,
+  "intensity": 0.1,
+  "groups": [
+    [
+      {
+        "risk": [
+          0.05,
+          0.1
+        ],
+        "unavailable": [
+          0.01,
+          0.015
+        ],
+        "cost": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "risk": [
+          0.01,
+          0.02
+        ],
+        "unavailable": [
+          0.005,
+          0.005
+        ],
+        "cost": [
+          0.2,
+          0.2,
+          16
+        ],
+        "scratch": 16,
+        "invoke": [
+          0.01,
+          0.02
+        ],
+        "recovery_time": 1,
+        "recovery_traffic": 1
+      }
+    ],
+    [
+      {
+        "risk": [
+          0.03,
+          0.06
+        ],
+        "unavailable": [
+          0.005,
+          0.005
+        ],
+        "cost": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "risk": [
+          0.005,
+          0.01
+        ],
+        "unavailable": [
+          0.002,
+          0.002
+        ],
+        "cost": [
+          0.2,
+          0.2,
+          16
+        ],
+        "scratch": 16,
+        "invoke": [
+          0.01,
+          0.01
+        ],
+        "recovery_time": 1,
+        "recovery_traffic": 1
+      }
+    ]
+  ]
+}

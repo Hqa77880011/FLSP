@@ -71,3 +71,11 @@ flsp execute --input example.json --output runs/execution --variant full
 ```
 
 The example is an explicit analytical/simulated input specification, not an experiment result. Replace it with the schema described above for application data. The execute path writes the actual selected actions, constraints, and mechanism metrics.
+
+## Selected reproduction setting
+
+Use the bundled two-fault, two-group protection profile. Risk, unavailability, invoke probability, recovery cost and scratch memory are explicit finite-model inputs; both resource caps and max_unavailable=0.025 apply. This setting requires no hardware injection trace.
+
+```bash
+python -m flsp.cli execute --input examples/finite_profile.json --output runs/finite --variant full
+```
