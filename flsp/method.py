@@ -37,7 +37,7 @@ def placement(problem,variant='full'):
         if best is None:break
         selected=best[1]
     risk,unavailable,cost=summarize(selected);base_risk=summarize([0]*len(groups))[0]
-    return {'actions':selected,'conditional_sdc':risk,'unavailability':unavailable,'risk_weighted_coverage':1-risk/base_risk if base_risk>0 else None,'all_inference_sdc':float(-np.expm1(-problem.get('intensity',0)*risk)),'cost':cost.tolist(),'feasible':bool(np.all(cost<=caps))}
+    return {'actions':selected,'conditional_sdc':risk,'unavailability':unavailable,'risk_weighted_coverage':1-risk/base_risk if base_risk>0 else None,'all_inference_sdc':float(-np.expm1(-problem.get('intensity',0)*risk)),'cost':cost.tolist(),'feasible':bool(np.all(cost<=caps) and unavailable<=problem.get('max_unavailable',.025))}
 
 
 def execute(args):
